@@ -38,3 +38,12 @@ services:
       WORDPRESS_DB_PASSWORD: hetic
     volumes:
       - ./wordpress:/var/www/html
+
+  web:
+    image: nginx
+    expose:
+      - "80"
+    volumes:
+      - ./code:/usr/share/nginx/html
+    ports:
+      - 80:80
